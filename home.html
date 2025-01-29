@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="welcomeMessage">
         <h1>Welcome to Smokaha</h1>
     </div>
 
@@ -33,17 +33,29 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#ageModal').modal('show');
+    <!-- Home Page Content -->
+    <div id="homePageContent" style="display:none;">
+        <!-- Your home page content goes here -->
+    </div>
 
-            $('#confirmAge').click(function() {
-                $('#ageModal').modal('hide');
-            });
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        document.getElementById('confirmAge').addEventListener('click', function() {
+            $('#ageModal').modal('hide');
+            document.getElementById('homePageContent').style.display = 'block';
+        });
+
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
+            $('#ageModal').modal('hide');
+            document.getElementById('welcomeMessage').style.display = 'none';
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            $('#ageModal').modal('show');
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
