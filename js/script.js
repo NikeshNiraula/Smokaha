@@ -1,41 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the modal
-    var modal = document.getElementById('myModal');
+    const ageVerification = document.getElementById('age-verification');
+    const yesBtn = document.getElementById('yes-btn');
+    const noBtn = document.getElementById('no-btn');
 
-    // Get the button that opens the modal
-    var btn = document.getElementById('myBtn');
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName('close')[0];
-
-    // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-        modal.style.display = 'block';
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
-});
-
-// Dropdown Hover Effect
-document.addEventListener("DOMContentLoaded", function () {
-    const dropdown = document.querySelector(".dropdown");
-    const dropdownContent = document.querySelector(".dropdown-content");
-
-    dropdown.addEventListener("mouseenter", function () {
-        dropdownContent.style.display = "block";
+    yesBtn.addEventListener('click', function() {
+        ageVerification.style.display = 'none';
     });
 
-    dropdown.addEventListener("mouseleave", function () {
-        dropdownContent.style.display = "none";
+    noBtn.addEventListener('click', function() {
+        alert('You must be 21 or older to access this site.');
+        window.close();
     });
 });
+
+function showPopup(title, description, price) {
+    const popup = document.getElementById('popup');
+    const popupTitle = document.getElementById('popup-title');
+    const popupDescription = document.getElementById('popup-description');
+    const popupPrice = document.getElementById('popup-price');
+
+    popupTitle.textContent = title;
+    popupDescription.textContent = description;
+    popupPrice.textContent = price;
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+
+function addToCart() {
+    alert('Item added to cart');
+    closePopup();
+}
