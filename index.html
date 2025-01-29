@@ -6,12 +6,9 @@
     <title>Simple Website</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/scripts.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Smokaha</h1>
-    </div>
-
     <!-- Warning Modal -->
     <div class="modal fade" id="ageModal" tabindex="-1" role="dialog" aria-labelledby="ageModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -33,6 +30,58 @@
         </div>
     </div>
 
+    <div id="mainContent" style="display:none;">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">MEGAWIDTH</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Page ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                        <li><a href="#">Page 3</a></li>
+                        <li><a href="#">Page 4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+                <li><a href="#">Page 4</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="gallery">
+                <div class="card">
+                    <img src="image1.jpg" alt="Architecture">
+                    <p><strong>Amazing Architecture</strong></p>
+                    <p>Architect</p>
+                </div>
+                <div class="card">
+                    <img src="image2.jpg" alt="Architecture">
+                    <p><strong>Amazing Architecture</strong></p>
+                    <p>Architect</p>
+                </div>
+                <div class="card">
+                    <img src="image3.jpg" alt="Architecture">
+                    <p><strong>Amazing Architecture</strong></p>
+                    <p>Architect</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -42,6 +91,7 @@
 
             $('#confirmAge').click(function() {
                 $('#ageModal').modal('hide');
+                $('#mainContent').show();
             });
         });
     </script>
