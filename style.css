@@ -577,6 +577,10 @@ a.btn-link.text-light:after {
   background-color: var(--bs-light);
 }
 
+.headline{
+  color: #ffffff;
+}
+
 .navbar .megamenu{ padding: 1rem; }
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
