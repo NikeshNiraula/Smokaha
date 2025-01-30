@@ -21,11 +21,34 @@
         }
         .location:hover {
             background-color: #e9ecef;
-            color:black;
+            color: black;
         }
         #map {
             height: 580px;
             width: 60%;
+        }
+        .contact-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .contact-form .form-control {
+            margin-bottom: 15px;
+        }
+        .contact-form .btn {
+            width: 100%;
+            background-color: #007bff;
+            border: none;
+        }
+        .contact-form .btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -33,7 +56,7 @@
     <section class="py-5">
         <div class="container-lg">
             <h1>Contact Us</h1>
-            <p>Thank you for visiting the website of Roll N' Smoke. We proudly serve Brookings, Sioux Falls, SD, Marshall, MN, and Omaha, NE. Please use the form below to email us.</p>
+            <p>Thank you for visiting the website of Smokaha. We proudly serve Lincoln, Omaha, Grand Island. Please use the form below to email us.</p>
 
             <div class="locations">
                 <h2>Our Locations</h2>
@@ -48,19 +71,39 @@
                             <p>5500 S 56th St ste 135, Lincoln, NE 68516</p>
                         </div>
                         <div class="location" data-lat="40.938503" data-lng="-98.378647">
-                            <h3>Smokaha Tobacco - Grand island </h3>
+                            <h3>Smokaha Tobacco - Grand Island</h3>
                             <p>SMOKAHA TOBACCO, 2250 N Webb Rd Suite 246, Grand Island, NE 68803</p>
                         </div>
-                        <div class="location" data-lat="44.4483" data-lng="-95.7894">
+                        <div class="location" data-lat="41.267063" data-lng="-96.071935">
                             <h3>Smokaha - Omaha</h3>
                             <p>3048 N 90th St, Omaha, NE 68134</p>
                         </div>
-                        <div class="location" data-lat="43.5352" data-lng="-96.7202">
+                        <div class="location" data-lat="41.259202" data-lng="-96.052186">
                             <h3>Smokaha - Omaha</h3>
                             <p>7918 W Dodge Rd, Omaha, NE 68114</p>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Contact Us Form -->
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </section>
@@ -147,9 +190,7 @@
                 <div class="col-md-6 copyright">
                     <p>© 2024 Smokaha. All rights reserved.</p>
                 </div>
-                <div class="col-md-6 credit-link text-start text-md-end">
-                    <p>HTML Template by <a href="https://templatesjungle.com/">TemplatesJungle</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a> </p>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -159,7 +200,7 @@
         let marker;
 
         function initMap() {
-            // Default Location (Brookings)
+            // Default Location (Lincoln, Nebraska)
             const defaultLocation = { lat: 40.7574715, lng: -96.642934 };
             try {
                 // Initialize the map
@@ -206,6 +247,35 @@
 
         // Load the Google Maps API when the page loads
         window.onload = loadGoogleMaps;
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Validate form fields
+            if (!name || !phone || !email || !message) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Log form data (you can replace this with an AJAX request to send the data to a server)
+            console.log('Name:', name);
+            console.log('Phone:', phone);
+            console.log('Email:', email);
+            console.log('Message:', message);
+
+            // Show a success message
+            alert('Thank you for contacting us! We will get back to you soon.');
+
+            // Clear the form
+            document.getElementById('contactForm').reset();
+        });
     </script>
 </body>
 </html>
