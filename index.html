@@ -143,7 +143,7 @@
     
         <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
           <li class="nav-item border-dashed active">
-            <a href="/categories/cigar.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="/cigar.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <i class="flaticon-cigar"></i>
               <span>Cigar</span>
             </a>
@@ -346,12 +346,12 @@
       </div>
     </header>
     
-    <section style="background-image: url('images/banner-1.png');background-repeat: no-repeat;background-size: cover;">
+    <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
       <div class="container-lg">
         <div class="row">
           <div class="col-lg-6 pt-5 mt-5">
             <h2 class="display-1 ls-1 text-white "><span class="fw-bold">We Smoke</span> <span class="fw-bold">the </span><span class="fw-bold">Competition</span></h2>
-            <p class="fs-4 text-white">Pure Flavor, Smooth Hits</p>
+            <p class="fs-4 text-white">Pure Flavor, Smooth Hits, Elegant </p>
             <div class="d-flex gap-3">
               <!-- <a href="#" class="btn btn-primary text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Start Shopping</a>
               <a href="#" class="btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Join Now</a> -->
@@ -508,6 +508,38 @@
         </div>
       </div>
     </section>
+
+    <!-- ...existing code... -->
+<
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+<script>
+  let map;
+  let marker;
+
+  function initMap() {
+    // Default Location (Brookings)
+    const defaultLocation = { lat: 44.3113, lng: -96.7984 };
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: defaultLocation,
+      zoom: 12,
+    });
+
+    // Marker
+    marker = new google.maps.Marker({
+      position: defaultLocation,
+      map: map,
+      title: "ROLL N' SMOKE - BROOKINGS"
+    });
+  }
+
+  function updateMap(lat, lng) {
+    const newLocation = { lat: lat, lng: lng };
+    map.setCenter(newLocation);
+    marker.setPosition(newLocation);
+  }
+</script>
+<!-- ...existing code... -->
 
     <!-- <section class="pb-5">
       <div class="container-lg">

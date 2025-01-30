@@ -163,3 +163,15 @@
   }); // End of a document
 
 })(jQuery);
+
+function loadHeader() {
+  fetch("header.html")
+    .then(response => response.text()) // Get HTML content as text
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data; // Inject into div
+    })
+    .catch(error => console.error("Error loading header:", error));
+}
+
+// Load header when the page is loaded
+document.addEventListener("DOMContentLoaded", loadHeader);
