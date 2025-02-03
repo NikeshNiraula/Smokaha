@@ -1,127 +1,140 @@
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+      <div class="offcanvas-header justify-content-between">
+        <h4 class="fw-normal text-uppercase fs-6">Menu</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex flex-column gap-3 mb-0">
+          
+          <!-- Cigar Category with Hover Card -->
+          <li class="nav-item border-dashed position-relative">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+              Tooltip with HTML
+            </button>
+            <a href="/cigar.html" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-title="This top tooltip is themed via CSS variables." 
+              class="nav-link d-flex align-items-center gap-3 text-dark p-2 cigar-category">
+              <i class="flaticon-cigar"></i>
+              <span>Cigar</span>
+            </a>
+          </li>
 
-    <div class="offcanvas-header justify-content-between">
-      <h4 class="fw-normal text-uppercase fs-6">Menu</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <li class="nav-item border-dashed">
+            <a href="/categories/disposable.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#dairy"></use></svg>
+              <span>Disposable</span>
+            </a>
+          </li>
+          <li class="nav-item border-dashed">
+            <a href="/categories/tobacco.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#meat"></use></svg>
+              <span>Tobacco</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
     </div>
+  </body>
+  <style>
+    /* Offcanvas Menu Styling */
+    .offcanvas {
+      background-color: #f8f9fa;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .offcanvas-header {
+      border-bottom: 1px solid #dee2e6;
+    }
+    .offcanvas-body {
+      padding: 1rem 1.5rem;
+    }
 
-    <div class="offcanvas-body">
-  
-      <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
-        <li class="nav-item border-dashed active">
-          <a href="/cigar.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <i class="flaticon-cigar"></i>
-            <span>Cigar</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="/categories/disposable.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#dairy"></use></svg>
-            <span>Disposable</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="/categories/tobacco.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#meat"></use></svg>
-            <span>Tobacco</span>
-          </a>
-        </li>
-        <!-- <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#seafood"></use></svg>
-            <span>Seafood</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#bakery"></use></svg>
-            <span>Bakery and Bread</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#canned"></use></svg>
-            <span>Canned Goods</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#frozen"></use></svg>
-            <span>Frozen Foods</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#pasta"></use></svg>
-            <span>Pasta and Rice</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#breakfast"></use></svg>
-            <span>Breakfast Foods</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#snacks"></use></svg>
-            <span>Snacks and Chips</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <button class="btn btn-toggle dropdown-toggle position-relative w-100 d-flex justify-content-between align-items-center text-dark p-2" data-bs-toggle="collapse" data-bs-target="#beverages-collapse" aria-expanded="false">
-            <div class="d-flex gap-3">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#beverages"></use></svg>
-              <span>Beverages</span>
-            </div>
-          </button>
-          <div class="collapse" id="beverages-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
-              <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Water</a></li>
-              <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Juice</a></li>
-              <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Soda</a></li>
-              <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Tea</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#spices"></use></svg>
-            <span>Spices and Seasonings</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#baby"></use></svg>
-            <span>Baby Food and Formula</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#health"></use></svg>
-            <span>Health and Wellness</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#household"></use></svg>
-            <span>Household Supplies</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#personal"></use></svg>
-            <span>Personal Care</span>
-          </a>
-        </li>
-        <li class="nav-item border-dashed">
-          <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#pet"></use></svg>
-            <span>Pet Food and Supplies</span>
-          </a>
-        </li> -->
-      </ul>
-    
-    </div>
+    /* Navigation Items */
+    .menu-list .nav-item {
+      border-bottom: 1px solid #dee2e6;
+      transition: background-color 0.3s, border-color 0.3s;
+      position: relative;
+    }
+    .menu-list .nav-item:hover {
+      background-color: #e9ecef;
+      border-color: #ced4da;
+    }
+    .menu-list .nav-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #343a40;
+      transition: color 0.3s;
+    }
+    .menu-list .nav-link:hover {
+      color: #495057;
+    }
+    .menu-list .nav-link svg {
+      fill: #6c757d;
+      transition: fill 0.3s;
+    }
+    .menu-list .nav-link:hover svg {
+      fill: #495057;
+    }
 
-  </div>
+    /* Close Button Styling */
+    .btn-close {
+      background-color: #343a40;
+      border-radius: 50%;
+      padding: 0.5rem;
+      transition: background-color 0.3s;
+    }
+    .btn-close:hover {
+      background-color: #495057;
+    }
+
+    /* Cigar Brands Card (Hidden by Default) */
+    .cigar-brands-card {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%; /* Moves it to the right of the category */
+      transform: translateX(10px);
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      z-index: 1050; /* Ensure it appears above other elements */
+    }
+
+    /* Show the Cigar Brands Card when hovering over the Cigar Category */
+    .cigar-category:hover + .cigar-brands-card, 
+    .cigar-brands-card:hover {
+      display: block;
+    }
+
+    /* Style for Cigar Brands */
+    .cigar-brands-card ul {
+      padding: 0;
+      margin: 0;
+    }
+    .cigar-brands-card li {
+      padding: 5px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .cigar-brands-card li:last-child {
+      border-bottom: none;
+    }
+    .cigar-brands-card li a {
+      text-decoration: none;
+      color: #343a40;
+      display: block;
+      transition: color 0.3s;
+    }
+    .cigar-brands-card li a:hover {
+      color: #007bff;
+    }
+  </style>
+</html>
