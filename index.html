@@ -38,7 +38,8 @@
 } 
 .full-width-header {
         width: 100%;
-        position: relative;
+        position: fixed; /* Change to fixed */
+        top: 0; /* Fix to the top of the page */
         z-index: 1000;
         background: white;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -86,6 +87,7 @@
       .main-content {
         margin-left: 0;
         transition: margin 0.3s;
+        padding-top: 120px; /* Add padding to account for the fixed header */
       }
 
       .navbar-toggler {
@@ -118,7 +120,9 @@
       }
 
       header {
-        position: relative;
+        position: fixed; /* Change to fixed */
+        top: 0; /* Fix to the top of the page */
+        width: 100%; /* Ensure it spans the full width */
         z-index: 999;
         background: white;
       }
@@ -172,9 +176,7 @@
       <div class="container-fluid">
         <div class="row py-3 border-bottom">
           <div class="col-6 col-lg-2">
-            <button class="navbar-toggler">
-              <svg width="24" height="24"><use xlink:href="#menu"></use></svg>
-            </button>
+            
             <a href="index.html">
               <img src="images/logo.png" alt="logo" class="img-fluid">
             </a>
@@ -462,28 +464,28 @@
                     <h4 class="fs-6 mt-3 fw-normal category-title">Batteries</h4>
                   </a>
                   <a href="category.html" class="nav-link swiper-slide text-center">
-                    <img src="images/category-thumb-7.jpg" class="rounded-circle" alt="Category Thumbnail">
+                    <img src="images/creamcharger.jpg" class="rounded-circle" alt="Category Thumbnail">
                     <h4 class="fs-6 mt-3 fw-normal category-title">Cream Chargers</h4>
                   </a>
                   <a href="category.html" class="nav-link swiper-slide text-center">
-                    <img src="images/category-thumb-8.jpg" class="rounded-circle" alt="Category Thumbnail">
+                    <img src="images/torches-thumbnail.jpg" class="rounded-circle" alt="Category Thumbnail">
                     <h4 class="fs-6 mt-3 fw-normal category-title">Torches</h4>
                   </a>
                   <a href="category.html" class="nav-link swiper-slide text-center">
-                    <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                    <img src="images/wraps-thumbnail.jpg" class="rounded-circle" alt="Category Thumbnail">
                     <h4 class="fs-6 mt-3 fw-normal category-title">Wraps</h4>
                   </a>
                   <a href="category.html" class="nav-link swiper-slide text-center">
-                    <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                    <h4 class="fs-6 mt-3 fw-normal category-title">Beverages</h4>
+                    <img src="images/cigarette-thumbnail.jpg" class="rounded-circle" alt="Category Thumbnail">
+                    <h4 class="fs-6 mt-3 fw-normal category-title">Cigarette</h4>
                   </a>
                   <a href="category.html" class="nav-link swiper-slide text-center">
-                    <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                    <h4 class="fs-6 mt-3 fw-normal category-title">Meat Products</h4>
+                    <img src="images/nitotinepouches-thumbnail.jpg" class="rounded-circle" alt="Category Thumbnail">
+                    <h4 class="fs-6 mt-3 fw-normal category-title">Nicotine Pouches</h4>
                   </a>
                   <a href="category.html" class="nav-link swiper-slide tSweetsext-center">
-                    <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                    <h4 class="fs-6 mt-3 fw-normal category-title">Breads</h4>
+                    <img src="images/mncomplient-thumbnail.jpg" class="rounded-circle" alt="Category Thumbnail">
+                    <h4 class="fs-6 mt-3 fw-normal category-title">MN Complient Products</h4>
                   </a>
                   
                 </div>
@@ -525,19 +527,19 @@
     <section class="pb-4 my-4">
       <div class="container-lg">
 
-        <div class="bg-warning pt-5 rounded-5">
+        <div class="bg-success-subtle  pt-5 rounded-5">
           <div class="container">
             <div class="row justify-content-center align-items-center">
               <div class="col-md-4">
-                <h2 class="mt-5">Download Loyalty App</h2>
-                <p>Shop More, Save More – Loyalty Pays!</p>
-                <div class="d-flex gap-2 flex-wrap mb-5">
-                  <a href="#" title="App store"><img src="images/img-app-store.png" alt="app-store"></a>
-                  <a href="#" title="Google Play"><img src="images/img-google-play.png" alt="google-play"></a>
-                </div>
+                <h2 class="mt-2 mb-2 text-black">Become a Loyal Member</h2>
+                <strong class ="text-black">For every $ spent earn 1 Point.<br>
+                 For every 100 point, Get $3 off.<br>
+                 For every 300 point, Get $10 off.<br>
+                 For every 500 point, Get $20 off.</strong>
+                
               </div>
               <div class="col-md-5">
-                <img src="images/banner-onlineapp.png" alt="phone" class="img-fluid">
+                <img src="images/5starrewards.png" alt="phone" class="img-fluid">
               </div>
             </div>
           </div>
@@ -625,9 +627,8 @@
               <div class="social-links mt-3">
                 <ul class="d-flex list-unstyled gap-2">
                   <li>
-                    <a href="#" class="btn btn-outline-light">
-                      <svg width="16" height="16"><use xlink:href="#facebook"></use></svg>
-                    </a>
+                      <img src="images/fb.png"  alt="logo">
+                    
                   </li>
                   <li>
                     <a href="#" class="btn btn-outline-light">
