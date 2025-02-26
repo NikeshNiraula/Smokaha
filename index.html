@@ -25,16 +25,25 @@
     <style>
       /* Mobile First Approach */
       .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: fixed;
-        left: -250px;
-        top: 0;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    width: 250px;
+    height: calc(100vh - 120px); /* Account for header height */
+    position: fixed;
+    left: -250px;
+    top: 120px; /* Start below header */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 998; /* Lower than header */
+    transition: all 0.3s ease;
+    padding: 20px;
+    overflow-y: auto; /* Add scroll if content overflows */
+} 
+.full-width-header {
+        width: 100%;
+        position: relative;
         z-index: 1000;
-        transition: all 0.3s ease;
-        padding: 20px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       }
+
 
       .sidebar.active {
         left: 0;
@@ -85,6 +94,14 @@
         position: relative;
       }
 
+      .main-nav {
+        width: 100%;
+        background: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+        padding: 0.5rem 0;
+      }
+
       @media (min-width: 769px) {
         .sidebar {
           left: 0;
@@ -105,8 +122,18 @@
         z-index: 999;
         background: white;
       }
+      .header-row {
+        align-items: center;
+        padding: 0.5rem 0;
+      }
 
-      @media (max-width: 767px) {
+      .search-bar {
+        background: #f8f9fa;
+        border-radius: 25px;
+      }
+
+      @media (max-width: 769px) {
+        
         #banner-carousel {
           display: none;
         }
@@ -142,11 +169,11 @@
   <body>
     <!-- Sidebar -->
     <div class="sidebar">
-      <div class="sidebar-logo">
+      <!-- <div class="sidebar-logo">
         <a href="index.html">
           <img src="images/logo.png" alt="logo" class="img-fluid">
         </a>
-      </div>
+      </div> -->
       <nav class="sidebar-nav">
         
         <div class="sidebar-categories mt-4">
@@ -253,7 +280,7 @@
                 <li class="nav-item active">
                   <a href="contact-us.html" class="nav-link">Contact Us</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                   <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
                     <li><a href="index.html" class="dropdown-item">About Us </a></li>
@@ -269,7 +296,7 @@
                     <li><a href="index.html" class="dropdown-item">My Account </a></li>
                     <li><a href="index.html" class="dropdown-item">404 Error </a></li>
                   </ul>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
@@ -503,8 +530,8 @@
           <div class="container">
             <div class="row justify-content-center align-items-center">
               <div class="col-md-4">
-                <h2 class="mt-5">Download Organic App</h2>
-                <p>Online Orders made easy, fast and reliable</p>
+                <h2 class="mt-5">Download Loyalty App</h2>
+                <p>Shop More, Save More – Loyalty Pays!</p>
                 <div class="d-flex gap-2 flex-wrap mb-5">
                   <a href="#" title="App store"><img src="images/img-app-store.png" alt="app-store"></a>
                   <a href="#" title="Google Play"><img src="images/img-google-play.png" alt="google-play"></a>
@@ -520,31 +547,7 @@
       </div>
     </section>
 
-    <section class="py-4">
-      <div class="container-lg">
-        <h2 class="my-4">People are also looking for</h2>
-        <a href="#" class="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Angie’s Boomchickapop Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Salty kettle Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chobani Greek Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Sweet Vanilla Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Foster Farms Takeout Crispy wings</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Warrior Blend Organic</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chao Cheese Creamy</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chicken meatballs</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Angie’s Boomchickapop Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Salty kettle Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chobani Greek Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Sweet Vanilla Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Foster Farms Takeout Crispy wings</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Warrior Blend Organic</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chao Cheese Creamy</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chicken meatballs</a>
-      </div>
-    </section>
-
-    <section class="py-5">
+    <!-- <section class="py-5">
       <div class="container-lg">
         <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
           <div class="col">
@@ -593,7 +596,7 @@
           </div>
           <div class="col">
             <div class="card mb-3 border border-dark-subtle p-3">
-              <div class="text-dark mb-3">
+              <div class="text-dark mb-3">  
                 <svg width="32" height="32"><use xlink:href="#offers"></use></svg>
               </div>
               <div class="card-body p-0">
@@ -604,7 +607,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer Banner Section -->
     <section class="footer-banner">
