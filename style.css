@@ -577,6 +577,15 @@ a.btn-link.text-light:after {
   color: #ffffff;
 }
 
+.fixed-popover .popover {
+  position: fixed !important; /* Fix the position */
+  top: 100px;  /* Adjust this based on the position of your trigger */
+  left: 300px;  /* Adjust this based on the position of your trigger */
+  z-index: 2000;  /* Ensure it stays on top */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+}
+
+
 .navbar .megamenu{ padding: 1rem; }
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
