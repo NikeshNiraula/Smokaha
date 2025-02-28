@@ -205,7 +205,8 @@
       .popover-body {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 15px;
+        justify-content: space-between;
       }
       .popover-body img {
         width: 20%;
@@ -296,23 +297,27 @@
           <h6>CATEGORIES</h6>
           <ul class="nav flex-column">
             <li class="nav-item position-relative">
-              <a class="nav-link" href="categories/cigar.html" id="cigarPopover" data-bs-toggle="popover" data-bs-trigger="manual" data-bs-placement="right" data-bs-html="true" data-bs-content="
-                <div class='popover-body'>
-                  <img src='images/arturofuente.png' alt='Arturo Fuente'>
-                  <img src='images/rockypatel.jpg' alt='Rocky Patel'>
-                  <img src='images/gurkha.png' alt='Gurkha'>
-                  <img src='images/arturofuente.png' alt='Arturo Fuente'>
-                  <img src='images/rockypatel.jpg' alt='Rocky Patel'>
-                  <img src='images/gurkha.png' alt='Gurkha'>
-                  <img src='images/arturofuente.png' alt='Arturo Fuente'>
-                  <img src='images/rockypatel.jpg' alt='Rocky Patel'>
-                  <img src='images/gurkha.png' alt='Gurkha'>
-                </div>
-              ">
+              <a class="nav-link" href="categories/cigar.html" id="cigarPopoverTrigger">
                 <svg width="18" height="18"><use xlink:href="#fruits"></use></svg>
                 Cigar
               </a>
             </li>
+            
+            <!-- Custom Popover -->
+            <div id="customPopover" class="custom-popover">
+              <div class="popover-body">
+                <img src="images/arturofuente.png" alt="Arturo Fuente">
+                <img src="images/rockypatel.jpg" alt="Rocky Patel">
+                <img src="images/gurkha.png" alt="Gurkha">
+                <img src="images/arturofuente.png" alt="Arturo Fuente">
+                <img src="images/rockypatel.jpg" alt="Rocky Patel">
+                <img src="images/gurkha.png" alt="Gurkha">
+                <img src="images/arturofuente.png" alt="Arturo Fuente">
+                <img src="images/rockypatel.jpg" alt="Rocky Patel">
+                <img src="images/gurkha.png" alt="Gurkha">
+              </div>
+            </div>
+            
             <li class="nav-item">
               <a class="nav-link" href="categories/disposable.html">
                 <svg width="18" height="18"><use xlink:href="#dairy"></use></svg>
@@ -834,51 +839,47 @@
     window.addEventListener('resize', toggleBannerVisibility);
       });
       
-  document.addEventListener("DOMContentLoaded", function () {
-  var popoverTrigger = document.getElementById('cigarPopover');
+      document.addEventListener("DOMContentLoaded", function () {
+  var popoverTrigger = document.getElementById('cigarPopoverTrigger');
+  var popover = document.getElementById('customPopover');
   
-  // Create a popover with the 'manual' trigger
-  var popover = new bootstrap.Popover(popoverTrigger, {
-    trigger: 'manual',  // Turn off automatic placement
-    placement: 'right'  // Use your preferred placement
-  });
-
-  // Function to manually position the popover
+  // Function to position the popover
   function positionPopover() {
-    const popoverElement = document.querySelector('.popover');
     const rect = popoverTrigger.getBoundingClientRect();
-    
-    if (popoverElement) {
-      // Get the current scroll position of the page
-      //const scrollY = window.scrollY;
+    const popoverHeight = popover.offsetHeight;
+    const popoverWidth = popover.offsetWidth;
 
-      // Manually set the popover's position relative to the trigger element
-      popoverElement.style.position = 'fixed'; // Fixed positioning so it doesn't move
-      //popoverElement.style.top = rect.top + scrollY + 'px'; // Account for scroll position
-      popoverElement.style.left = rect.right + 'px'; // Position to the right of the trigger element
-      popoverElement.style.zIndex = 2000;  // Ensure the popover is above other elements
-      popoverElement.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)'; // Optional shadow for clarity
+    // Adjust popover position based on trigger element
+    popover.style.top = rect.top + window.scrollY + 'px'; // Keep popover below the link
+    popover.style.left = rect.right + 'px'; // Align popover to the right of the link
+    
+    // If the popover is too close to the top of the page, adjust it
+    if (rect.top + window.scrollY + popoverHeight > window.innerHeight) {
+      popover.style.top = window.innerHeight - popoverHeight - 10 + 'px';
     }
   }
 
-  // Show the popover and position it manually
+  // Show the popover and position it
   popoverTrigger.addEventListener('mouseenter', function () {
-    popover.show();
-    positionPopover();  // Manually position the popover
+    popover.style.display = 'block'; // Show popover
+    positionPopover(); // Position it correctly
   });
 
   // Hide the popover on mouse leave
   popoverTrigger.addEventListener('mouseleave', function () {
     setTimeout(function () {
-      if (!document.querySelector('.popover:hover')) {
-        popover.hide();
+      if (!popover.matches(':hover')) {
+        popover.style.display = 'none'; // Hide popover
       }
     }, 100);
   });
 
-  // Update the position of the popover on window resize or scroll
+  // Update popover position on scroll or resize
+  window.addEventListener('scroll', positionPopover);
   window.addEventListener('resize', positionPopover);
 });
+
+
 
     </script>
   </body>
